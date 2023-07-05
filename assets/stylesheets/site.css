@@ -1,10 +1,54 @@
 body
 {
-  background-color: midnightblue;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(3, 32, 41);
   color: aliceblue;
 }
 
 a
 {
   color: lightblue;
+}
+
+header,
+footer,
+nav,
+#contents
+{
+  padding: 1em 0.6em;
+}
+
+nav
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.6em;
+}
+
+.navigation-item
+{
+  padding: 0.6em;
+  border-radius: 0.4em;
+  background-color: white;
+}
+
+.navigation-item a
+{
+  text-decoration: none;
+  color: rgb(1, 26, 34);
+}
+
+main
+{
+  padding: 0.4em 1.4em;
+  border-radius: 1.6em;
+  background-color: rgb(203, 222, 228);
+  color: rgb(1, 26, 34);
+}
+
+main a
+{
+  color: rgb(1, 60, 80);
 }
