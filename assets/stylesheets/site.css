@@ -1,7 +1,7 @@
 body
 {
-  margin: 0;
-  padding: 0;
+  display: grid;
+  grid-template-columns: auto 20% 50% 20% auto;
   background-color: rgb(3, 32, 41);
   color: aliceblue;
 }
@@ -19,8 +19,17 @@ nav,
   padding: 1em 0.6em;
 }
 
+header
+{
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
 nav
 {
+  grid-column-start: 2;
+  grid-column-end: 5;
+
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -40,8 +49,17 @@ nav
   color: rgb(1, 26, 34);
 }
 
+#contents
+{
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
 main
 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+
   padding: 0.4em 1.4em;
   border-radius: 1.6em;
   background-color: rgb(203, 222, 228);
@@ -51,4 +69,10 @@ main
 main a
 {
   color: rgb(1, 60, 80);
+}
+
+footer
+{
+  grid-column-start: 2;
+  grid-column-end: 5;
 }
