@@ -256,7 +256,41 @@ main
 }
 
 @media only screen and (min-width: 640px) {
-  
+  main
+  {
+    flex-direction: row;
+  }
+
+  #info,
+  #sideboard
+  {
+    flex: 1;
+    min-height: 500px;
+  }
+
+  #sideboard
+  {
+    gap: 2em;
+    justify-content: center;
+  }
+
+  #photo
+  {
+    width: 26vw;
+    height: 26vw;
+  }
+
+  #places
+  {
+    gap: 3vw;
+  }
+
+  #places a::before
+  {
+    width: 4vw;
+    height: 4vw;
+    background-size: 4.1vw;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
