@@ -13,7 +13,8 @@ body
 }
 
 main
-{  display: flex;
+{
+  display: flex;
   background-color: rgb(13, 101, 112);
 }
 
@@ -43,6 +44,12 @@ main
   color: rgb(13, 101, 112);
 }
 
+#contact-info a
+{
+  font-weight: bold;
+  text-decoration: none;
+}
+
 #download-cv
 {
   display: flex;
@@ -55,8 +62,6 @@ main
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5vw;
-  padding: 0.5vw 0.7vw;
   background-color: rgb(13, 101, 112);
   color: aliceblue;
   text-decoration: none;
@@ -66,21 +71,15 @@ main
 {
   display: inline-block;
   content: '';
-  background-position: center;
-  background-repeat: no-repeat;
   background-image: url(../images/icons/download.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #sideboard
 {
   display: flex;
-  border-radius: 0 1.6em 1.6em 0;
-}
-
-#contact-info a
-{
-  font-weight: bold;
-  text-decoration: none;
 }
 
 #photo
@@ -146,30 +145,24 @@ main
     overflow: auto;
   }
 
-  main, 
+  main,
   #info
   {
     border-radius: 0.8em;
+    min-height: 400px;
   }
 
   #info
   {
-    flex-grow: 2;
+    flex: 2;
     justify-content: space-evenly;
-    padding: 0 1.5em;
-  }
-
-  #info,
-  #sideboard
-  {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 1.5em;
   }
 
   #greetings,
   #presentation
   {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   #info p,
@@ -184,7 +177,7 @@ main
     gap: 0.6em;
     padding: 0.5em 0.6em;
     border-radius: 0.3em;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   #download-cv a::before
@@ -195,17 +188,21 @@ main
 
   #sideboard
   {
-    flex-grow: 1;
+    flex: 1;
     flex-direction: column;
-    gap: 1em;
     justify-content: space-evenly;
     align-items: center;
+    gap: 1em;
+    height: 100%;
+    padding: 1em 0;
   }
 
   #photo
   {
     width: 18vh;
     height: 18vh;
+    min-width: 8em;
+    min-height: 8em;
   }
 
   #places
@@ -221,23 +218,27 @@ main
   }
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 600px) {
   main
   {
     flex-direction: row;
   }
 
-  #info,
-  #sideboard
+  main,
+  #info
   {
-    flex: 1;
-    min-height: 500px;
+    border-radius: 1.2em;
+  }
+
+  #info
+  {
+    flex: 5;
   }
 
   #greetings,
   #presentation
   {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   #info p,
@@ -249,22 +250,29 @@ main
 
   #download-cv a
   {
-    gap: 0.6em;
-    padding: 0.5em 0.6em;
-    border-radius: 0.3em;
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  #download-cv a::before
+  {
+    width: 22px;
+    height: 22px;
   }
 
   #sideboard
   {
+    flex: 4;
     gap: 2em;
     justify-content: center;
+    padding: 0;
   }
 
   #photo
   {
     width: 26vw;
     height: 26vw;
+    max-width: 250px;
+    max-height: 250px;
   }
 
   #places
@@ -280,21 +288,59 @@ main
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-height: 720px) {
   main
   {
     grid-row-start: core-begin;
     grid-row-end: core-end;
+  }
+}
+
+@media only screen and (min-width: 1100px){
+  main
+  {
     grid-column-start: core-begin;
     grid-column-end: core-end;
+  }
+
+  #info
+  {
+    flex: 7;
+  }
+
+  #greetings,
+  #presentation
+  {
+    font-size: 20px;
+  }
+
+  #info p,
+  #contact-info
+  {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  #download-cv a
+  {
+    font-size: 18px;
+  }
+
+  #download-cv a::before
+  {
+    width: 24px;
+    height: 24px;
+  }
+
+  #sideboard
+  {
+    flex: 6;
   }
 
   #photo
   {
     width: 20vw;
     height: 20vw;
-    max-width: 300px;
-    max-height: 300px;
   }
 
   #places
