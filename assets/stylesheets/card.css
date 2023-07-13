@@ -7,8 +7,8 @@
 body
 {
   display: grid;
-  grid-template-rows: 2vw [begin] calc(20vh - 2vw) [core-begin] 60vh [core-end] calc(20vh - 2vw) [end] 2vw;
-  grid-template-columns: 2vw [begin] auto [core-begin] clamp(300px, 70vw, 1000px) [core-end] auto [end] 2vw;
+  grid-template-rows: [begin] 20vh [core-begin] 60vh [core-end] 20vh [end];
+  grid-template-columns: [begin] auto [core-begin] clamp(300px, 70vw, 1000px) [core-end] auto [end];
   background-color: rgb(3, 32, 41);
 }
 
@@ -296,7 +296,7 @@ main
   }
 }
 
-@media only screen and (min-width: 1100px){
+@media only screen and (min-width: 1100px) {
   main
   {
     grid-column-start: core-begin;
