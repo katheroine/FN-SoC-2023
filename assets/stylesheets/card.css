@@ -201,14 +201,14 @@ main
   #greetings,
   #presentation
   {
-    font-size: max(1.8vw, 1.8vh);
+    font-size: max(2vw, 2vh);
   }
 
   #intro,
   #info p,
   #contact-info
   {
-    font-size: max(1.4vw, 1.4vh);
+    font-size: max(1.6vw, 1.6vh);
   }
 
   #intro
@@ -227,13 +227,13 @@ main
     gap: 0.6em;
     padding: 0.5em 0.6em;
     border-radius: 0.3em;
-    font-size: max(1.6vw, 1.6vh);
+    font-size: max(1.8vw, 1.8vh);
   }
 
   #download-cv a::before
   {
-    width: max(1.8vw, 1.8vh);
-    height: max(1.8vw, 1.8vh);
+    width: max(2vw, 2vh);
+    height: max(2vw, 2vh);
   }
 
   #sideboard
