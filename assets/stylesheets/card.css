@@ -1,14 +1,25 @@
+:root
+{
+  font-size: 14px;
+}
+
 *
 {
   margin: 0;
   padding: 0;
 }
 
+html,
 body
 {
-  display: grid;
-  grid-template-rows: [begin] 20vh [core-begin] 60vh [core-end] 20vh [end];
-  grid-template-columns: [begin] auto [core-begin] clamp(300px, 70vw, 1000px) [core-end] auto [end];
+  height: 100%;
+}
+
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(3, 32, 41);
 }
 
@@ -134,42 +145,71 @@ main
   background-image: url(../images/icons/instagram.svg);
 }
 
-@media only screen and (min-width: 0px) {
+@media only screen and (orientation: portrait) {
   main
   {
-    grid-row-start: begin;
-    grid-row-end: end;
-    grid-column-start: begin;
-    grid-column-end: end;
     flex-direction: column-reverse;
-    overflow: auto;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  main
+  {
+    flex-direction: row;
+  }
+
+  #info
+  {
+    flex: 1;
+  }
+
+  #sideboard
+  {
+    flex: 1;
+  }
+}
+
+@media (min-width: 0px)
+{
+  main
+  {
+    width: 90%;
   }
 
   main,
   #info
   {
     border-radius: 0.8em;
-    min-height: 400px;
   }
 
   #info
   {
-    flex: 2;
     justify-content: space-evenly;
-    padding: 1em 1.5em;
+    padding: 4.4vw 4vw;
   }
 
   #greetings,
   #presentation
   {
-    font-size: 16px;
+    font-size: max(1.8vw, 1.8vh);
+  }
+
+  #intro,
+  #info p,
+  #contact-info
+  {
+    font-size: max(1.4vw, 1.4vh);
+  }
+
+  #intro
+  {
+    margin-top: 1vw;
   }
 
   #info p,
   #contact-info
   {
-    font-size: 12px;
-    margin: 8px 0;
+    margin: 4vw 0;
   }
 
   #download-cv a
@@ -177,51 +217,79 @@ main
     gap: 0.6em;
     padding: 0.5em 0.6em;
     border-radius: 0.3em;
-    font-size: 14px;
+    font-size: max(1.6vw, 1.6vh);
   }
 
   #download-cv a::before
   {
-    width: 20px;
-    height: 20px;
+    width: max(1.8vw, 1.8vh);
+    height: max(1.8vw, 1.8vh);
   }
 
   #sideboard
   {
-    flex: 1;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     gap: 1em;
-    height: 100%;
     padding: 1em 0;
   }
 
   #photo
   {
-    width: 18vh;
-    height: 18vh;
-    min-width: 8em;
-    min-height: 8em;
+    width: max(6vh, 20vw);
+    height: max(6vh, 20vw);
   }
 
   #places
   {
-    gap: 6vw;
+    gap: 2vw;
   }
 
   #places a::before
   {
-    width: 8vw;
-    height: 8vw;
-    background-size: 8.2vw;
+    width: 4vw;
+    height: 4vw;
+    background-size: cover;
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media (min-width: 500px)
+{
   main
   {
-    flex-direction: row;
+    width: 80%;
+  }
+
+  main,
+  #info
+  {
+    border-radius: 1em;
+  }
+
+  #info
+  {
+    padding: 2.2vw 3.6vw;
+  }
+
+  #intro
+  {
+    margin-top: 0.5vw;
+  }
+
+  #info p,
+  #contact-info
+  {
+    margin: 2vw 0;
+  }
+}
+
+@media (min-width: 1000px)
+{
+  main
+  {
+    width: 80%;
+    max-width: 900px;
   }
 
   main,
@@ -232,128 +300,60 @@ main
 
   #info
   {
-    flex: 5;
+    padding: 2em 3em;
   }
 
   #greetings,
   #presentation
   {
-    font-size: 18px;
+    font-size: 130%;
+  }
+
+  #intro,
+  #info p,
+  #contact-info
+  {
+    font-size: 100%;
+  }
+
+  #intro
+  {
+    margin-top: 0.7em;
   }
 
   #info p,
   #contact-info
   {
-    font-size: 14px;
-    margin: 10px 0;
+    margin: 1.4em 0;
   }
 
   #download-cv a
   {
-    font-size: 16px;
+    font-size: 115%;
   }
 
   #download-cv a::before
   {
-    width: 22px;
-    height: 22px;
-  }
-
-  #sideboard
-  {
-    flex: 4;
-    gap: 2em;
-    justify-content: center;
-    padding: 0;
-  }
-
-  #photo
-  {
-    width: 26vw;
-    height: 26vw;
-    max-width: 250px;
-    max-height: 250px;
-  }
-
-  #places
-  {
-    gap: 3vw;
-  }
-
-  #places a::before
-  {
-    width: 4vw;
-    height: 4vw;
-    background-size: 4.1vw;
-  }
-}
-
-@media only screen and (min-height: 720px) {
-  main
-  {
-    grid-row-start: core-begin;
-    grid-row-end: core-end;
-  }
-}
-
-@media only screen and (min-width: 1100px) {
-  main
-  {
-    grid-column-start: core-begin;
-    grid-column-end: core-end;
-  }
-
-  #info
-  {
-    flex: 7;
-  }
-
-  #greetings,
-  #presentation
-  {
-    font-size: 20px;
-  }
-
-  #info p,
-  #contact-info
-  {
-    font-size: 16px;
-    margin: 10px 0;
-  }
-
-  #download-cv a
-  {
-    font-size: 18px;
-  }
-
-  #download-cv a::before
-  {
-    width: 24px;
-    height: 24px;
-  }
-
-  #sideboard
-  {
-    flex: 6;
+    max-width: 20px;
+    max-height: 20px;
   }
 
   #photo
   {
     width: 20vw;
     height: 20vw;
+    max-width: 250px;
+    max-height: 250px;
   }
 
   #places
   {
-    gap: 1em;
+    gap: 1.2em;
   }
 
   #places a::before
   {
-    width: 3vw;
-    height: 3vw;
     max-width: 40px;
     max-height: 40px;
-    background-size: cover;
   }
 }
