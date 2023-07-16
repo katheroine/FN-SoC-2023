@@ -1,3 +1,9 @@
+@font-face
+{
+  font-family: courier-prime-regular;
+  src: url('../fonts/courier-prime/CourierPrime-Regular.ttf');
+}
+
 :root
 {
   font-size: 16px;
@@ -40,7 +46,7 @@ main
   justify-content: space-evenly;
   background-color: rgb(203, 222, 228);
   color: rgb(1, 26, 34);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: courier-prime-regular, 'Courier New', Courier, monospace;
 }
 
 #greetings,
@@ -161,7 +167,7 @@ main
   #sideboard
   {
     justify-content: center;
-    gap: 4vw;
+    gap: 3vw;
   }
 }
 
@@ -173,12 +179,12 @@ main
 
   #info
   {
-    flex: 1;
+    flex: 4;
   }
 
   #sideboard
   {
-    flex: 1;
+    flex: 3;
     justify-content: center;
     gap: 1.6em;
   }
@@ -268,7 +274,7 @@ main
 {
   main
   {
-    width: 80%;
+    width: 90%;
   }
 
   main,
@@ -310,6 +316,7 @@ main
 
   #info
   {
+    flex: 1;
     padding: 2em 3em;
   }
 
@@ -346,6 +353,11 @@ main
   {
     max-width: 20px;
     max-height: 20px;
+  }
+
+  #sideboard
+  {
+    flex: 1;
   }
 
   #photo
